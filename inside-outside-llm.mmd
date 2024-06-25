@@ -1,0 +1,33 @@
+%% Inside Outside LLM is from the AI Diagram repo by LearnAzureAI is licensed under CC BY 4.0. https://github.com/LearnAzureAI/ai-diagrams/blob/main/inside-outside-llm.mmd
+
+graph TD
+    subgraph LLMAirspace["Inside the LLM"]
+        style LLMAirspace fill:#dff0d8,stroke:#4cae4c,stroke-width:2px;
+
+        %% These and other factors depend on model architecture (e.g., transformer layers, attention mechanisms)
+        D[Vectors]
+        T["`Processing (uses Vectors, 
+         final output influenced 
+         by **Temperature**`"]
+    end
+
+    subgraph OutsideLLM["Outside the LLM"]
+        style OutsideLLM fill:#d9edf7,stroke:#31708f,stroke-width:2px;
+
+        direction TB
+        A["Words (text, image, audio, ...)"] -->|Tokenization| B[Tokens]
+        B -->|"Mapping (1:1)"| C[Token IDs]
+        E -->|"Reverse Mapping (1:1)"| F[Tokens]
+        F -->|Detokenization| G[Words]
+    end
+
+    C -->|"Encoding (N:1) 
+          (Embedding or Vectorizing)"| D
+
+    D -->|"`Decoding (1:N) 
+            %% p-top nucleus sampling
+            **P-top sampling**
+            (Inverse Embedding or Devectorizing)`"| E[Token IDs]
+
+    attribution["Inside Outside LLM (v0.2)<br>Latest: https://github.com/LearnAzureAI/ai-diagrams/blob/main/inside-outside-llm.mmd<br>License: CC-BY 4.0"]
+    style attribution fill:#DCDCDC,stroke:#333,stroke-width:4px
