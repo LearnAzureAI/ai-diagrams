@@ -1,17 +1,16 @@
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#00b4d8', 'edgeLabelBackground':'#ffffff', 'tertiaryColor': '#023e8a'}}}%%
 flowchart TB
-  subgraph AI[Artificial Intelligence]
-    subgraph ML[Machine Learning]
-      subgraph DL[Deep Learning]
-        GA[Generative AI]
-      end
-    ML -->| "is a type of" | DL
-    DL -->| "is a type of" | GA
-    end
-  ML -->| "is a type of" | AI
-  end
+    subgraph AI[Artificial Intelligence]
+        subgraph ML[Machine Learning]
+            subgraph NN[Neural Networks]
+                subgraph DL[Deep Learning]
+                   GA[Generative AI]
+                end
+            end
+        end
+    end
 
-  style AI fill:#00b4d8,stroke:#000000,stroke-width:2px
-  style ML fill:#0077b6,stroke:#000000,stroke-width:2px
-  style DL fill:#03045e,stroke:#000000,stroke-width:2px
-  style GA fill:#d00000,stroke:#000000,stroke-width:2px
+    style AI fill:#d0d0d0,stroke:#000000,stroke-width:2px
+    style ML fill:#00d0d0,stroke:#000000,stroke-width:2px
+    style NN fill:#d000d0,stroke:#000000,stroke-width:2px
+    style DL fill:#00d000,stroke:#000000,stroke-width:2px
+    style GA fill:#d00000,stroke:#000000,stroke-width:2px
